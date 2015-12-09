@@ -1,4 +1,4 @@
-clear all;
+function [D, P] = load_quad_data()
 
 % load similtudes
 data = load('./data/similtudes.mat');
