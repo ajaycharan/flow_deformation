@@ -11,15 +11,15 @@ Y = A * X;
 V = Y(1:end-1, :)';
 
 % plot original
-patch('Vertices', cube.vertices, 'Faces', cube.faces, ...
-'FaceVertexCData', hsv(6), 'FaceColor', 'flat');
-view(3);
+% patch('Vertices', cube.vertices, 'Faces', cube.faces, ...
+% 'FaceVertexCData', hsv(6), 'FaceColor', 'flat');
+% view(3);
 
 % plot new
 patch('Vertices', V, 'Faces', cube.faces, ...
 'FaceVertexCData', hsv(6), 'FaceColor', 'flat');
 view(3);
 
-axis vis3d;
-axis equal;
+% axis vis3d;
+% axis equal;
 

@@ -14,7 +14,8 @@ def simil_from_odom(odom):
 
     S = []
     MAX_H = 10
-    g = lambda x: 3 * (x / MAX_H)
+    # g = lambda x: 3 * (x / MAX_H)
+    g = lambda x: x
 
     for t in odom:    
 
