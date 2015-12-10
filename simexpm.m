@@ -1,3 +1,10 @@
+%===============================================================
+% function A = simexpm(B)
+% - input: B
+%       B : a matrix in sim(3)
+% - output: A
+%       A : matrix exponential of B, a matrix in SIM(3)
+%===============================================================
 function A = simexpm(B)
 
 % tolerance (for lambda and theta comparisons)

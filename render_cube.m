@@ -1,3 +1,10 @@
+%===============================================================
+% function render_cube(cube, A)
+% - input: cube, A
+%       cube : 3D cube object created with load_cube
+%       A : Transformation to apply
+% - output: None, renders transformed cube to a MATLAB figure
+%===============================================================
 function render_cube(cube, A)
 
 % convert vertices to homogenous coordinates

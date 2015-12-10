@@ -1,3 +1,10 @@
+%===============================================================
+% function [D, P] = load_quad_data()
+% - output: D, P
+%       D : 4x4xN matrix containing similitudes from quad odometry,
+%               uses Z for rotation scaling
+%       P : The translational component of the quad odometry
+%===============================================================
 function [D, P] = load_quad_data()
 
 % load similitudes

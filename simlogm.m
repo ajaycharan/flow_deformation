@@ -1,3 +1,10 @@
+%===============================================================
+% function B = simlogm(A)
+% - input: A
+%       A : a matrix in SIM(3)
+% - output: B
+%       B : matrix logarithm of A, a matrix in sim(3)
+%===============================================================
 function B = simlogm(A)
 
 % tolerance (for lambda and theta comparisons)
