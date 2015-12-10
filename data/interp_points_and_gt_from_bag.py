@@ -22,12 +22,12 @@ def simil_from_odom(odom):
         # extract
         pos = t[0]
         rot = t[1]
-        alpha = g(pos[2]) # scale with z
+        # alpha = g(pos[2]) # scale with z
+        alpha = 1
 
         # convert the similtude
-        A = transformations.quaternion_matrix(rot)
-        A = alpha * A
-        A[-1, -1] = 1
+        A = np.linalg.inv(transformations.quaternion_matrix(rot))
+        A[:3, :3] = alpha * A[:3, :3]
         A[:3, -1] = pos
 
         # save
@@ -86,7 +86,6 @@ if __name__ == '__main__':
     S = simil_from_odom(odom)
     print S[0]
     print S[-1]
-
 
     # unzip
     pos, rot = zip(*odom)
