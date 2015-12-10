@@ -10,7 +10,7 @@ freq = 20;
 D = D(:, :, 1:freq:end);
 
 % interpolation end condition
-cond = 'natural';
+cond = 'bessel';
 
 % number of subdivisions
 N = 3;
