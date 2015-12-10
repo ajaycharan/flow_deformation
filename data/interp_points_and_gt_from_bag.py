@@ -15,15 +15,15 @@ def simil_from_odom(odom):
     S = []
     MAX_H = 10
     # g = lambda x: 3 * (x / MAX_H)
-    g = lambda x: x
+    g = lambda x: abs(x) + 1
 
     for t in odom:    
 
         # extract
         pos = t[0]
         rot = t[1]
-        # alpha = g(pos[2]) # scale with z
-        alpha = 1
+        alpha = g(pos[2]) # scale with z
+        # alpha = 1
 
         # convert the similtude
         A = np.linalg.inv(transformations.quaternion_matrix(rot))
