@@ -3,6 +3,13 @@ function cube = load_cube(A_0)
 % basic 
 vertices = [0 0 0; 1 0 0; 1 1 0; 0 1 0; 0 0 1; 1 0 1; 1 1 1; 0 1 1];
 
+% jimmie it around
+scale = .1;
+vertices(:, 1)  = vertices(:, 1) - 0.5;
+vertices(:, 2)  = vertices(:, 2) - 0.5;
+vertices(:, 3)  = vertices(:, 3) - 0.5;
+vertices = scale * vertices;
+
 % convert vertices to homogenous coordinates
 X = [vertices'; ones(1, length(vertices))];
 

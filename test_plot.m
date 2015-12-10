@@ -2,27 +2,29 @@
 clear all;
 close all;
 
-figure;
-xlim([-40 20])
-ylim([-40 20])
-zlim([0 10])
-
-h = get(gca, 'DataAspectRatio');
-set(gca, 'DataAspectRatio', [1 1 h(3)]);
-
-hold on;
-
 % data
 [D, P] = load_quad_data;
 
+f = figure;
+plot3(P(:, 1), P(:, 2), P(:, 3));
+
+h = get(gca, 'DataAspectRatio');
+set(gca, 'DataAspectRatio', [1 1 h(3)]);
+axis vis3d
+
+hold on;
+
+
 % cube and initialization
 cube = load_cube(D(:, :, 1));
+
+% path
 
 for i=1:size(D, 3)
 
     % draw
     render_cube(cube, D(:, :, i));
 
-    pause(0.1);
-    cla;
+    drawnow;
+    pause(0.05);
 end
