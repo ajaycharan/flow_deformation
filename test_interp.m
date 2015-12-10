@@ -13,7 +13,7 @@ axis vis3d
 hold on;
 
 % cube and initialization
-cube = load_cube(D(:, :, 1));
+cube = load_cube();
 
 % index
 id = 1;

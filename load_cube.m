@@ -1,4 +1,9 @@
-function cube = load_cube(A_0)
+%===============================================================
+% function cube = load_cube()
+% - output:
+%       cube: struct containing vertices and faces for a 3D cube
+%===============================================================
+function cube = load_cube()
 
 % basic 
 vertices = [0 0 0; 1 0 0; 1 1 0; 0 1 0; 0 0 1; 1 0 1; 1 1 1; 0 1 1];

@@ -23,7 +23,7 @@ axis vis3d
 hold on;
 
 % cube and initialization
-cube = load_cube(D(:, :, 1));
+cube = load_cube();
 
 % generate deformation vectors
 X = [];
