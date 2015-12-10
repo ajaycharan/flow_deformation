@@ -16,10 +16,10 @@ hold on;
 cube = load_cube(D(:, :, 1));
 
 % index
-id = 1
+id = 1;
 
 % draw interpolation between t = [0, 1]
-res = 10
+res = 10;
 for i=1:res
 
     % render

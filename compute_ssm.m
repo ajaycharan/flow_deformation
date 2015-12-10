@@ -12,7 +12,7 @@ r = sqrt(d(id));
 
 % compute final b, c, d
 x(id) = r;
-y = S(id, 1:end)';
+y = S(id, :)';
 y(id) = 0;
 x = x + y / r;
 

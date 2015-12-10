@@ -12,7 +12,7 @@ B_2 = simlogm(A_2);
 B = (1 - t) * B_1 + t * B_2;
 
 % re-exponentiate
-A = expm(B);
+A = simexpm(B);
 
 end
 
