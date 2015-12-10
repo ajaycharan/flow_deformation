@@ -1,5 +1,8 @@
 function B = simlogm(A)
 
+% tolerance (for lambda and theta comparisons)
+tau = 8;
+
 % compute alpha from the eigs of the similtude
 E = eig(A(1:3, 1:3));
 alpha = nthroot(prod(E), 3);
@@ -9,9 +12,11 @@ R = A(1:3, 1:3) / alpha;
 
 % compute lambda
 lambda = log(alpha);
+lambda = round(lambda, tau);
 
 % compute theta
 theta = acos((trace(R) - 1) / 2);
+theta = round(theta, tau);
 
 % compute Omega
 Omega = zeros(3);
@@ -34,21 +39,17 @@ end
 V = zeros(3);
 
 if theta == 0 && lambda == 0
-    disp('theta zero, lambda zero');
     V = eye(3);
 
 elseif theta == 0 && lambda ~= 0
-    disp('theta zero, lambda not zero');
     V = ((exp(lambda) - 1) / lambda) * eye(3);
 
 elseif theta ~= 0 && lambda == 0
-    disp('theta not zero, lambda zero');
     V = eye(3) ...
     + ((1 - cos(theta)) / theta^2) * Omega ...
     + ((theta - sin(theta)) / theta^3) * Omega^2;
 
 elseif theta ~= 0 && lambda ~= 0
-    disp('both zero');
     a = (exp(lambda) - 1) / lambda;
     b = (theta * (1 - exp(lambda) * cos(theta)) ...
         + exp(lambda) * lambda * sin(theta)) / (theta * (lambda^2 + theta^2));
