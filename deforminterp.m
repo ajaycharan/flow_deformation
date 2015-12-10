@@ -1,3 +1,11 @@
+%===============================================================
+% function A = deforminterp(A_1, A_2, t)
+% - input: A_1, A_2, t
+%       A_1, A_2: similitudes to interpolate
+%       t: time of interpolation
+% - output:
+%       A: interpolated similitude
+%===============================================================
 function A = deforminterp(A_1, A_2, t)
 
 if nargin < 3

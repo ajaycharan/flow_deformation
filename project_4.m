@@ -5,7 +5,7 @@ close all;
 % data
 [D, P] = load_quad_data;
 
-% downsample similtudes
+% downsample similitudes
 freq = 20;
 D = D(:, :, 1:freq:end);
 
@@ -29,7 +29,7 @@ cube = load_cube(D(:, :, 1));
 X = [];
 for i=1:size(D, 3)
     
-    % compute logarithm of similtude
+    % compute logarithm of similitude
     B = simlogm(D(:, :, i));
 
     % extract parameters
@@ -89,5 +89,5 @@ for i=1:size(D, 3)
     render_cube(cube, D(:, :, i));
 
     drawnow;
-    pause(0.05);
+    pause(0.01);
 end

@@ -3,7 +3,7 @@ function B = simlogm(A)
 % tolerance (for lambda and theta comparisons)
 tau = 8;
 
-% compute alpha from the eigs of the similtude
+% compute alpha from the eigs of the similitude
 E = eig(A(1:3, 1:3));
 alpha = nthroot(prod(E), 3);
 

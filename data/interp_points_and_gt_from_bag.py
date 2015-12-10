@@ -25,7 +25,7 @@ def simil_from_odom(odom):
         alpha = g(pos[2]) # scale with z
         # alpha = 1
 
-        # convert the similtude
+        # convert the similitude
         A = np.linalg.inv(transformations.quaternion_matrix(rot))
         A[:3, :3] = alpha * A[:3, :3]
         A[:3, -1] = pos
@@ -100,5 +100,5 @@ if __name__ == '__main__':
 
     # write data to files
     np.savetxt('odometry.dat', pos, delimiter='\t')
-    sio.savemat('similtudes.mat', mdict={'similtudes':S}, oned_as='row')
+    sio.savemat('similitudes.mat', mdict={'similitudes':S}, oned_as='row')
 
